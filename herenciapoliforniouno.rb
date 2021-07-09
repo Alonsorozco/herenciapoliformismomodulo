@@ -1,10 +1,9 @@
     class Person
-        attr_reader :first, :last , :age, :type
-        def initialize(first, last, age, type)
+        attr_reader :first, :last , :age
+        def initialize(first, last, age)
             @first_name = first
             @last_name = last
             @age = age
-            @type = type
         end
         def birthday
             @age += 1
@@ -17,7 +16,7 @@
          puts "Bienvenidos a la clase de programación con Ruby!"
         end
         def introduce 
-            puts "Hola alumnos. Mi nombre es #{@first_name} #{@last_name}."
+            puts "Hola alumnos. Mi nombre es #{self.first_name} #{self.last_name}."
         end
     end
     
@@ -28,7 +27,7 @@
             puts "Bienvenidos a la clase de programación con Ruby!"
         end
         def introduce
-            puts "Hola alumnos. Mi nombre es #{@first_name} #{@last_name}."
+            puts "Hola alumnos. Mi nombre es #{self.first_name} #{self.last_name}."
         end
     end
 
@@ -38,11 +37,16 @@
             puts "Aquí es la reunión de apoderados?"
         end
         def introduce
-            puts "Hola. Soy uno de los apoderados. Mi nombre es #{@first_name} #{@last_name}."
+            puts "Hola. Soy uno de los apoderados. Mi nombre es #{self.first_name} #{self.last_name}."
         end
     end
 
-    a = Parent.new('Fabian','Salas','35','estudiantes')
+    padre1 = Parent.new('Fabian','Salas','35')
+    profe1= Teacher.new('Fabian','Salas','35')
+    estudiante1 = Student.new('Fabian','Salas','35')
 
-    pp a.talk
-    pp a.introduce
+    puts padre1.talk
+    puts profe1.talk
+    puts estudiante1.talk
+    puts padre1.introduce
+    
